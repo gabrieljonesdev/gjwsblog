@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: dependabot/bundler/addressable-2.8.1 # o "master" se usi ancora quello
+
+media_folder: "assets" # cartella per immagini caricate
+public_folder: "/assets"
+
+collections:
+  - name: "posts"
+    label: "Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Categoria", name: "categories", widget: "list" }
+      - { label: "Tag", name: "tags", widget: "list" }
+      - { label: "Lingua", name: "lang", widget: "string", default: "it" }
+      - { label: "Ref", name: "ref", widget: "string" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
